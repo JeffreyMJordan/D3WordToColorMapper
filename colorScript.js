@@ -13,12 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     let divStr = "1";
     for(let j = 0; j<numStr.length; j++){
-      divStr += "0"
+      divStr += "0";
     }
-    return (parseFloat(numStr.split("").reverse().join(""))/parseFloat(divStr) );
+    return (parseFloat(numStr.split("").reverse().join(""))%10000);
   };
 
-  let rainbow = d3.scaleSequential(d3.interpolateRainbow);
+  let rainbow = d3.scaleSequential(d3.interpolateRainbow).domain([1,10000]);
   let form = document.getElementById("form");
 
   form.addEventListener("submit", (e) => {
